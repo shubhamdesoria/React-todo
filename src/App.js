@@ -6,8 +6,12 @@ function App() {
   const [listItems, setListItems] = useState([])
 
   const addTodo = (list) => {
-    setListItems(list)
-  }
+    
+    let lists =[...listItems, list]
+    setListItems(lists);
+      
+    } 
+  
 
 return (
   <div className="App">

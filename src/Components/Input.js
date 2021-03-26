@@ -6,21 +6,17 @@ const [title, setTitle] = useState("")
 
 const onSubmit = (e) => {
     e.preventDefault()
-   props.addTodo(title)
+   props.addTodo(title);
+   setTitle("");
   
 
 }
-const onChange = (e) =>{
-setTitle(previousState => {
-    previousState = previousState + e.target.value
-})
+// setTitle(title);
 
-
-}
 return (
     <div>
         <form onSubmit={onSubmit}>
-            <input type="text" value = {title} onChange = {onChange} />
+            <input type="text" value = {title} onChange ={e => setTitle(e.target.value)} />
             {/* <Button text="Add" onClick={onClick} /> */}
         </form>
         <TodoList items = {props.listItems}/>

@@ -2,14 +2,14 @@
 import Button from './Button'
 const TodoList = (props) => {
     const list = () => {
-        console.log(props.items)
         return (<div className="todo-list">
-            {props.items.map(item => (<ul>
-                <li id="todo-list-items">
+            <ul>
+            {props.items.map((item, index) => (<li key = {index}>
                     {item}
                     <Button text="del" />
                 </li>
-            </ul>))}
+            ))}
+            </ul>
 
         </div>)
     }
