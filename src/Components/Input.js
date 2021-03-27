@@ -1,5 +1,5 @@
 // import Button from './Button'
-import { useState, useEffect } from "react"
+import {useState} from "react"
 import TodoList from './TodoList'
 const Input = (props) =>{
 const [title, setTitle] = useState("")
