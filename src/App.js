@@ -5,18 +5,31 @@ import { useState } from 'react'
 function App() {
   const [listItems, setListItems] = useState([])
 
-  const addTodo = (list) => {
+  const addTodo = (list, eindex) => {
     
-    let lists =[...listItems, list]
-    setListItems(lists);
+    if(eindex == null){
+      let lists =[...listItems, list]
+      setListItems(lists);
+    }
+    else{
+      let newList =[...listItems];
+      newList[eindex] = list;
+      setListItems(newList)
+    }
       
     } 
+    const inputDelete = (eindex) => {
+      let newList =[...listItems.filter((item)=>
+        listItems.indexOf(item) !== eindex
+      )];
+      setListItems(newList)
+    }
   
 
 return (
   <div className="App">
     <Header />
-    <Input addTodo={addTodo} listItems={listItems} />
+    <Input addTodo={addTodo} listItems={listItems} inputDelete = {inputDelete} />
   </div>
 );
   
