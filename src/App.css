@@ -1,0 +1,19 @@
+.App{
+    width: 70%;
+    margin: auto;
+    
+    
+}
+.input-form{
+   display: flex;
+}
+
+.input-form .input-text{
+ flex: 9;
+}
+.input form .input-submit{
+    flex : 1;
+}
+ul{
+    list-style-type: none;
+}

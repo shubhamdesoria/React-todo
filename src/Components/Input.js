@@ -23,12 +23,12 @@ setIndex(index);
 
 return (
     <div>
-        <form onSubmit={onSubmit}>
-            <input type="text" value = {title} onChange ={e => setTitle(e.target.value)} />
-            <input type="submit" value = "Submit" />
+        <form onSubmit={onSubmit} className = "input-form">
+            <input type="text" value = {title} onChange ={e => setTitle(e.target.value) } className = "input-text" />
+            <input type="submit" value = "Submit" className =  "input-submit" />
            
         </form>
-        <TodoList items = {props.listItems} inputEdit = {InputEdit} inputDel = {props.inputDelete}/>
+        <TodoList items = {props.listItems} inputEdit = {InputEdit} inputDel = {props.inputDelete} markComplete = {props.markComplete}/>
     </div>
 
 )}
