@@ -4,20 +4,24 @@ import TodoList from './TodoList'
 const Input = (props) =>{
 const [title, setTitle] = useState("")
 const [eindex, setIndex] = useState(null)
+const [boolState, setboolState] = useState(false)
 
 const onSubmit = (e) => {
     e.preventDefault()
     if(title !== "" && title.trim().length !== 0){
 
-        props.addTodo(title, eindex);
+        props.addTodo(title, eindex, boolState);
     }
     setTitle("");
+    setboolState(false);
+    setIndex(null);
   
 
 }
 const InputEdit = (item, index) =>{
 setTitle(item);
 setIndex(index);
+setboolState(true);
 }
 // setTitle(title);
 

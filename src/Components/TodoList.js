@@ -35,12 +35,14 @@ const TodoList = (props) => {
     const list = () => {
         return (<div className="todo-list">
             <ul>
-                {props.items.map((titem, index) => (<li key={index} style = {checkStyle(titem)}>
-                    <label>
+                {props.items.map((titem, index) => (<li key={index}  >
+                    <label style = {checkStyle(titem)}>
                     <input type= "checkbox"  checked = {titem.complete} onChange = {() =>
                         onCheck(index)
                     } />
+                    <span>
                     {titem.item}
+                    </span>
                     </label>
                     <button onClick = {() => onClickEdit(titem.item, index)}> Edit </button> 
                     <button onClick = {() => onClickDel(index)}> Delete </button> 

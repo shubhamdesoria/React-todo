@@ -14,6 +14,27 @@
 .input form .input-submit{
     flex : 1;
 }
+.todo-list{
+    margin-top: 10px;
+}
 ul{
-    list-style-type: none;
+        list-style-type: none;
+}
+ul > li{
+ 
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+ label > input{
+    margin: 3px;
+}
+li > label {
+    
+    flex: 8;
+    word-wrap: break-word;
+}
+li > button{
+    flex: 2;
+    display: inline-block;
 }

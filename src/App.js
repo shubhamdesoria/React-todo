@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import "./App.css"
 function App() {
   const [listItems, setListItems] = useState([])
-  
+
   useEffect(() => {
     const todoListItems = JSON.parse(localStorage.getItem('todolist'));
     if (todoListItems) {
@@ -18,51 +18,55 @@ function App() {
     localStorage.setItem('todolist', JSON.stringify(listItems));
   }, [listItems]);
 
-  const addTodo = (list, eindex) => {
-    
-    
-    if(eindex == null){
+  const addTodo = (list, eindex, boolValue) => {
+    if (boolValue === true) {
+      let newList = [...listItems];
+      newList.map(i => {
+        if (newList.indexOf(i) === eindex) {
+          i.item= list;
+        }
+        return (i)
+  
+      })
+      setListItems(newList)
+    }
+
+    else {
       const li = {
-        item : list,
-        complete : false 
+        item: list,
+        complete: false
       }
-      let lists =[...listItems, li]
+      let lists = [...listItems, li]
       setListItems(lists);
     }
-    else{
-      let newList =[...listItems];
-      newList[eindex].item = list;
-      setListItems(newList)
-    }
-      
-    } 
-    const inputDelete = (eindex) => {
-      let newList =[...listItems.filter((item)=>
-        listItems.indexOf(item) !== eindex
-      )];
-      setListItems(newList)
-    }
+
+  }
+  const inputDelete = (eindex) => {
+    let newList = [...listItems.filter((item) =>
+      listItems.indexOf(item) !== eindex
+    )];
+    setListItems(newList)
+  }
   const markComplete = (eindex) => {
-    let newList =[...listItems];
+    let newList = [...listItems];
     newList.map(i => {
-      if(newList.indexOf(i) === eindex)
-      {
-      i.complete = !i.complete;
+      if (newList.indexOf(i) === eindex) {
+        i.complete = !i.complete;
       }
-      return(i)
+      return (i)
 
     })
-    
-      setListItems(newList)
-    }
-  
 
-return (
-  <div className="App">
-    <Header />
-    <Input addTodo={addTodo} listItems={listItems} inputDelete = {inputDelete} markComplete = {markComplete}/>
-  </div>
-);
-  
+    setListItems(newList)
+  }
+
+
+  return (
+    <div className="App">
+      <Header />
+      <Input addTodo={addTodo} listItems={listItems} inputDelete={inputDelete} markComplete={markComplete} />
+    </div>
+  );
+
 }
 export default App;
