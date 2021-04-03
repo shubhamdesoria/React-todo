@@ -2,10 +2,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(282deg, rgb(227, 230, 102), rgb(112, 255, 196));
+
 }
 
 body {
+  background-image: linear-gradient(282deg, rgb(227, 230, 102), rgb(112, 255, 196));
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
