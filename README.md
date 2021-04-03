@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Here is the UI visit link [Demo Link](https://gracious-ritchie-e98a06.netlify.app/).
 
 ## Available Scripts
 
